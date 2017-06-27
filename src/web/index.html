@@ -5,26 +5,39 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" href="css/local.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/bar.css" />
+    <link rel="stylesheet" href="css/index.css" />
 
     <link href="dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <title>运动司南</title>
 </head>
 
 <body>
-    <div class="map" id="map"></div>
-    <div class="navbar">
-        <div><i class="bar-icon icon-phone"></i>离我最近</div>
-        <div onclick="show()"><i class="bar-icon icon-eat"></i>室外</div>
-        <div onclick="show2()"><i class="bar-icon icon-brand"></i>室内</div>
-        <div onclick="hide()"><i class="bar-icon icon-success"></i>隐藏</div>
+    <div class="header">
+        <p class="title">天津市</p><i class="icon"></i>
     </div>
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="map" id="map"></div>
+    <div class="footer">
+        <div class="footer_button" onclick="show()">
+            <div class="icon"> </div>
+            <div> 距离 </div>
+        </div>
+        <div class="footer_button" onclick="show()">
+            <div class="icon"> </div>
+            <div>费用</div>
+        </div>
+        <div class="footer_button" onclick="show()">
+            <div class="icon"> </div>
+            <div>场地环境</div>
+        </div>
+        <div class="footer_button" onclick="hide()">
+            <div class="icon"> </div>
+            <div>地板材质</div>
+        </div>
+    </div>
 </body>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ihVRlXYqGLqKx4StR4tTNNlP9LzbBSNd"></script>
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="js/local.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
 </html>
