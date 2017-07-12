@@ -9,6 +9,12 @@ html,body{
     font-family:"微软雅黑";
 }
 
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 .header {
 	height: 43px;
 	text-align: center;
@@ -27,7 +33,43 @@ html,body{
     position: absolute;
     right: 15px;
     top: 13.5px;
-	height: 22.5px;
+	height: 16px;
+}
+
+.add_site_div{
+	position: absolute;
+	top: 135px;
+	left: calc(50% - 93px);
+	height: 31px;
+	line-height: 31px;
+	width: 186px;
+	background-color: white;
+	z-index: 12;
+	font-size: 12px;
+	overflow: hidden;
+	border-radius: 15.5px;
+}
+
+.add_site_button{
+	display: inline-block;
+	margin:0 13px;
+}
+
+.add_site_icon {
+	display: inline-block;
+	height: 19px;
+	margin-right: 19px;
+}
+
+.sub_site_button{
+	border-left: 1px solid #cdcdcd;
+	display: inline-block;
+	width: 40px;
+	text-align: center;
+}
+.sub_site_icon {
+	display: inline-block;
+	height: 19px;
 }
 
 .map {
@@ -36,7 +78,7 @@ html,body{
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
+    width: 100%; 
 }
 
 .footer {
