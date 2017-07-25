@@ -20,6 +20,7 @@ html {
 	text-align: center;
 	position: relative;
 	overflow: hidden;
+	z-index: 10;	
 }
 
 .header .title{
@@ -36,6 +37,38 @@ html {
 	height: 16px;
 }
 
+.person_info_div{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 100%;
+	background-color: rgba(100, 100, 100, 0.2);
+	z-index: 99;
+}
+
+.person_info_content{
+	float: right;
+	width: 60%;
+	height: 100%;
+	background-color: blue;
+}
+
+.site_info_div{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: -100%;
+	background-color: rgba(100, 100, 100, 0.2);
+	z-index: 99;
+}
+
+.site_info_content{
+	float: left;
+	width: 60%;
+	height: 100%;
+	background-color: blue;
+}
+
 .add_site_div{
 	position: absolute;
 	top: 135px;
@@ -44,10 +77,11 @@ html {
 	line-height: 31px;
 	width: 186px;
 	background-color: white;
-	z-index: 12;
+	z-index: 10;
 	font-size: 12px;
 	overflow: hidden;
 	border-radius: 15.5px;
+	text-align: center;
 }
 
 .add_site_button{
@@ -61,7 +95,15 @@ html {
 	margin-right: 19px;
 }
 
-.sub_site_button{
+.show_button{
+	display: none;
+}
+.show_site_icon {
+	display: inline-block;
+	height: 25px;
+}
+
+.hide_button{
 	border-left: 1px solid #cdcdcd;
 	display: inline-block;
 	width: 40px;
@@ -83,7 +125,7 @@ html {
 
 .footer {
 	height: 45px;
-	z-index: 11;
+	z-index: 10;
 	position: fixed;
 	bottom: 0;
 	left: 0;

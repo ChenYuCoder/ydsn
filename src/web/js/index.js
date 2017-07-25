@@ -1,10 +1,10 @@
 var map = new BMap.Map("map");// 百度地图API功能
 var geolocation = new BMap.Geolocation();
 var geolocationControl = new BMap.GeolocationControl({
-	anchor: BMAP_ANCHOR_TOP_RIGHT
+    anchor: BMAP_ANCHOR_TOP_RIGHT
 });
 
-	
+
 //var navigationControl = new BMap.NavigationControl({
 //  // 靠左上角位置
 //  anchor: BMAP_ANCHOR_TOP_LEFT,
@@ -24,22 +24,22 @@ var markerArr = [{ title: "天津BKS篮球运动中心", content: "营业时间�
 ];
 
 var courtData = [
-    new court("天津BKS篮球运动中心","营业时间：<br/>早6:00-晚22:00","117.219415|39.165158","in"),
-    new court("天大外场","营业时间：<br/>早6:00-晚22:00","117.183939|39.118684","in"),
-    new court("天大内场","营业时间：<br/>早6:00-晚22:00","117.181676|39.117858","in"),
-    new court("天津医科大学室外场","营业时间：<br/>早6:00-晚22:00","117.191359|39.114359","in"),
-    new court("中医药大学室外场","营业时间：<br/>早6:00-晚22:00","117.171866|39.123723","in"),
-    new court("未来广场","营业时间：<br/>早6:00-晚22:00","117.226694|39.14485","in"),
+    new court("天津BKS篮球运动中心", "营业时间：<br/>早6:00-晚22:00", "117.219415|39.165158", "in"),
+    new court("天大外场", "营业时间：<br/>早6:00-晚22:00", "117.183939|39.118684", "in"),
+    new court("天大内场", "营业时间：<br/>早6:00-晚22:00", "117.181676|39.117858", "in"),
+    new court("天津医科大学室外场", "营业时间：<br/>早6:00-晚22:00", "117.191359|39.114359", "in"),
+    new court("中医药大学室外场", "营业时间：<br/>早6:00-晚22:00", "117.171866|39.123723", "in"),
+    new court("未来广场", "营业时间：<br/>早6:00-晚22:00", "117.226694|39.14485", "in"),
 ]
 
 
 var points = [                          //创建7个点
-    new BMap.Point(117.219415,39.165158),
-    new BMap.Point(117.183939,39.118684),
-    new BMap.Point(117.181676,39.117858),
-    new BMap.Point(117.191359,39.114359),
-    new BMap.Point(117.171866,39.123723),
-    new BMap.Point(117.226694,39.14485)
+    new BMap.Point(117.219415, 39.165158),
+    new BMap.Point(117.183939, 39.118684),
+    new BMap.Point(117.181676, 39.117858),
+    new BMap.Point(117.191359, 39.114359),
+    new BMap.Point(117.171866, 39.123723),
+    new BMap.Point(117.226694, 39.14485)
 
 ];
 
@@ -52,17 +52,17 @@ geolocationControl.addEventListener("locationError", function (e) {
     // 定位失败事件
     alert(e.message);
 });
-geolocation.getCurrentPosition(function(r){
-		if(this.getStatus() == BMAP_STATUS_SUCCESS){
-			var mk = new BMap.Marker(r.point);
-			map.addOverlay(mk);
-			map.panTo(r.point);
-			
-		}
-		else {
-			alert('failed'+this.getStatus());
-		}        
-	},{enableHighAccuracy: true})
+geolocation.getCurrentPosition(function (r) {
+    if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+        var mk = new BMap.Marker(r.point);
+        map.addOverlay(mk);
+        map.panTo(r.point);
+
+    }
+    else {
+        alert('failed' + this.getStatus());
+    }
+}, { enableHighAccuracy: true })
 // 添加带有定位的导航控件
 
 
@@ -83,7 +83,7 @@ function createIcon(json) {
     var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w, json.h), { imageOffset: new BMap.Size(-json.l, -json.t), infoWindowOffset: new BMap.Size(json.lb + 5, 1), offset: new BMap.Size(json.x, json.h) })
     return icon;
 }
-function court(name,remarks,position,type){
+function court(name, remarks, position, type) {
     this.name = name;
     this.remarks = remarks;
     this.position = position;
@@ -103,9 +103,9 @@ function show() {
         var marker = new BMap.Marker(point);
         var iw = createInfoWindow(i);
         var label = new BMap.Label(json.title, { "offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20) });
-        
 
-        
+
+
         marker.setLabel(label);
         markers.push(marker);
         map.addOverlay(marker);// 将标注添加到地图中
@@ -115,12 +115,12 @@ function show() {
             color: "#333",
             cursor: "pointer"
         });
-        
-        
-//      map.setViewport(markerArr.point);
 
-        
-		//下面这个功能为什么括号里面
+
+        //      map.setViewport(markerArr.point);
+
+
+        //下面这个功能为什么括号里面
         (function () {
             var index = i;
             var _iw = createInfoWindow(i);
@@ -143,25 +143,25 @@ function show() {
             }
         })()
     }
-            var view = map.getViewport(eval(points));  
-		map.setZoom(view.zoom);
+    var view = map.getViewport(eval(points));
+    map.setZoom(view.zoom);
 }
 
 function show2() {
-	
-	geolocation.getCurrentPosition(function(r){
-		if(this.getStatus() == BMAP_STATUS_SUCCESS){
-			var mk = new BMap.Marker(r.point);
-			map.addOverlay(mk);
-			map.panTo(r.point);
-			
-		}
-		else {
-			alert('failed'+this.getStatus());
-		}        
-	},{enableHighAccuracy: true})
-	
-       for (var i = 0; i < markerArr.length; i++) {
+
+    geolocation.getCurrentPosition(function (r) {
+        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+            var mk = new BMap.Marker(r.point);
+            map.addOverlay(mk);
+            map.panTo(r.point);
+
+        }
+        else {
+            alert('failed' + this.getStatus());
+        }
+    }, { enableHighAccuracy: true })
+
+    for (var i = 0; i < markerArr.length; i++) {
         var json = markerArr[i];
         var p0 = json.point.split(",")[0];
         var p1 = json.point.split(",")[1];
@@ -170,9 +170,9 @@ function show2() {
         var marker = new BMap.Marker(point);
         var iw = createInfoWindow(i);
         var label = new BMap.Label(json.title, { "offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20) });
-        
 
-        
+
+
         marker.setLabel(label);
         markers.push(marker);
         map.addOverlay(marker);// 将标注添加到地图中
@@ -182,12 +182,12 @@ function show2() {
             color: "#333",
             cursor: "pointer"
         });
-        
-        
-//      map.setViewport(markerArr.point);
 
-        
-		//下面这个功能为什么括号里面
+
+        //      map.setViewport(markerArr.point);
+
+
+        //下面这个功能为什么括号里面
         (function () {
             var index = i;
             var _iw = createInfoWindow(i);
@@ -210,8 +210,8 @@ function show2() {
             }
         })()
     }
-            var view = map.getViewport();  
-		map.setZoom(view.zoom);
+    var view = map.getViewport();
+    map.setZoom(view.zoom);
 }
 
 
@@ -219,6 +219,38 @@ function hide() {
     for (var i = 0; i < markers.length; i++) {
         map.removeOverlay(markers[i]);
     }
-    markers =[];
+    markers = [];
 }
 
+
+
+function hideAddSiteDiv() {
+    $('.add_site_div').animate({ left: '10px', top: "73px", width: '31px' });
+    $('.add_site_button').css("display", "none");
+    $('.hide_button').css("display", "none");
+    $('.show_button').css("display", "block");
+}
+
+function showAddSiteDiv() {
+    $('.add_site_div').animate({ top: '135px', left: (document.body.clientWidth / 2 - 93) + "px", width: '186px' });
+    $('.add_site_button').css("display", "inline-block");
+    $('.hide_button').css("display", "inline-block");
+    $('.show_button').css("display", "none");
+}
+
+
+function showPersonInfoDiv() {
+    $('.person_info_div').animate({ left: 0 });
+    event.stopPropagation();
+    $(document).one("click", function () {
+        $('.person_info_div').animate({ left: "100%" });
+    });
+}
+
+function showSiteInfoDiv() {
+    $('.site_info_div').animate({ left: 0 });
+    event.stopPropagation();
+    $(document).one("click", function () {
+        $('.site_info_div').animate({ left: "-100%" });
+    });
+}
