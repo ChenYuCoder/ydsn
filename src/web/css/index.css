@@ -6,13 +6,11 @@
 html,body{
     width: 100%;
     height: 100%;
-    font-family:"微软雅黑";
-}
-
-html {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+	font-family:"微软雅黑";
+	overflow:hidden;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 .header {
@@ -39,34 +37,29 @@ html {
 
 .person_info_div{
 	position: absolute;
-	width: 100%;
+	width: 60%;
 	height: 100%;
 	left: 100%;
-	background-color: rgba(100, 100, 100, 0.2);
+	background-color: blue;
 	z-index: 99;
 }
 
-.person_info_content{
-	float: right;
-	width: 60%;
+.cover_div{
+	position: absolute;
+	background-color: rgba(100, 100, 100, 0.2);
+	z-index: 11;
 	height: 100%;
-	background-color: blue;
+	width: 100%;
+	display: none;
 }
 
 .site_info_div{
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: -100%;
-	background-color: rgba(100, 100, 100, 0.2);
-	z-index: 99;
-}
-
-.site_info_content{
-	float: left;
 	width: 60%;
 	height: 100%;
+	right: 100%;
 	background-color: blue;
+	z-index: 99;
 }
 
 .add_site_div{
@@ -145,4 +138,26 @@ html {
 	display: inline-block;
 	height: 24px;
 	margin-bottom: 3px;
+}
+
+.menu{
+	position: absolute;
+	top:100%;
+	width: 25%;
+	background-color: white;
+	text-align: center;
+}
+
+.menu li{
+	height: 30px;
+	font-size: 12px;
+	line-height: 30px;
+}
+
+.menu hr{
+	width: 50%;
+	height: 1px;
+	background-color: #cdcdcd;
+	margin: 0 0 0 25%;
+	border: 0;
 }
