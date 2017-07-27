@@ -40,7 +40,7 @@ html,body{
 	width: 60%;
 	height: 100%;
 	left: 100%;
-	background-color: blue;
+	background-color: white;
 	z-index: 99;
 }
 
@@ -58,8 +58,9 @@ html,body{
 	width: 60%;
 	height: 100%;
 	right: 100%;
-	background-color: blue;
+	background-color: white;
 	z-index: 99;
+	overflow-y: auto;
 }
 
 .add_site_div{
@@ -140,7 +141,7 @@ html,body{
 	margin-bottom: 3px;
 }
 
-.menu{
+.bottom_menu{
 	position: absolute;
 	top:100%;
 	width: 25%;
@@ -148,13 +149,29 @@ html,body{
 	text-align: center;
 }
 
-.menu li{
+.bottom_menu:nth-child(1){
+	left: 0
+}
+
+.bottom_menu:nth-child(2){
+	left: 25%
+}
+
+.bottom_menu:nth-child(3){
+	left: 50%
+}
+
+.bottom_menu:nth-child(4){
+	left: 75%
+}
+
+.bottom_menu div{
 	height: 30px;
 	font-size: 12px;
 	line-height: 30px;
 }
 
-.menu hr{
+.bottom_menu hr{
 	width: 50%;
 	height: 1px;
 	background-color: #cdcdcd;

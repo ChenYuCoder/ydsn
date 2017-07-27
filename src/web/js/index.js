@@ -254,10 +254,27 @@ function showSiteInfoDiv() {
     $('.cover_div').fadeIn(200);;
 }
 
-function showMenu() {
-    $('.menu').animate({ top: document.body.clientHeight - 45 - 120 + 'px' });
-    event.stopPropagation();
-    $(document).one("click", function () {
-        $('.menu').animate({ top: document.body.clientHeight });
-    });
+function showMenu(index) {
+    for (var i = 0; i < 4; i++) {
+        if (i != index) {
+            hideMenu(i)
+        }
+    }
+    $($('.bottom_menu')[index]).animate({ top: document.body.clientHeight - 45 - 120 + 'px' });
 }
+
+function hideMenu(index) {
+    $($('.bottom_menu')[index]).animate({ top: document.body.clientHeight }, 100);
+}
+
+$(function () {
+    var items = $('.bottom_menu div');
+    for (var i = 0; i < items.length; i++) {
+        items[i].onclick = function () {
+            for (var i = 0; i < 4; i++) {
+                hideMenu(i)
+            }
+            console.log($(this).html());
+        }
+    }
+});
