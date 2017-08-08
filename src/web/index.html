@@ -36,17 +36,19 @@
 
     <div class="person_info_div">
         <div class="person_info_content">
-            <div>请输入账号密码登录</div>
-            <div>
-                <label for="username">账号</label>
-                <input type="text" placeholder="账号" id="username">
-            </div>
-            <div>
-                <label for="password">密码</label>
-                <input type="password" placeholder="密码" id="password">
-            </div>
-            <button>登录</button>
-            <a>忘记密码</a>
+            <p class="login_title">请输入账号密码登录</p>
+            <form class="login_form">
+                <div>
+                    <label for="username">账号</label>
+                    <input type="text" placeholder="请输入您的账号" name="username">
+                </div>
+                <div>
+                    <label for="password">密码</label>
+                    <input type="password" placeholder="请填写密码" name="password">
+                </div>
+            </form>
+            <button class="login_btn">登录</button>
+            <a class="login_forget">忘记密码</a>
             <div>
                 注册账号
             </div>
